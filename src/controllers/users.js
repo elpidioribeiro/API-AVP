@@ -42,7 +42,7 @@ const loginUser = async (req, res) =>{
             return res.status(400).json({ message: 'Email e/ou senha incorretos' });
         }
 
-        const token = jwt.sign({id: user[0].id}, process.env.JWT_PASS , {expiresIn: '8h',})
+        const token = jwt.sign({id: user[0].id}, 'batatafrita' , {expiresIn: '8h',})
         
         const {password: _ , ... loggedInUser} = user[0]
         return res.status(200).json({ user: loggedInUser, token });
