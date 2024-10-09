@@ -1,14 +1,15 @@
 require('dotenv').config();
 
-
-const knex = require('knex') ({
+const knex = require('knex')({
     client: 'pg',
-    connection:{
-        host: 'localhost',
+    connection: {
+        host: 'permissively-lavish-muskox.data-1.use1.tembo.io',
         user: 'postgres',
-        password: '123456',
-        database: 'postgres'
+        password: 'P3ziOEmatrMM0X7L',
+        database: 'AVP-DATABASE',
+        port: 5432,
+        ssl: { rejectUnauthorized: false } // Aceitar certificados autoassinados ou desativar verificação
     }
-})
+});
 
 module.exports = knex;
